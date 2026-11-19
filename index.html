@@ -304,6 +304,23 @@ html,body{overflow-x:hidden}
   .eyebrow{font-size:.66rem;letter-spacing:1.2px}
   .icard .nm{font-size:1rem}
 }
+/* mobile professional pass */
+::selection{background:var(--gold);color:#141414}
+*{-webkit-tap-highlight-color:transparent}
+section[id],footer[id]{scroll-margin-top:84px}
+@media(max-width:640px){
+  .frame{transform:rotateY(-3deg) rotateX(1deg)}
+  .hero-visual{margin-top:6px}
+  .sec-head h2{font-size:1.85rem}
+  .client{padding:13px 14px}
+  .tl{padding-bottom:22px}
+  .socials .pill{padding:10px 16px}
+}
+@media(max-width:400px){
+  .plans,.proj,.client-grid,.miles{grid-template-columns:1fr}
+  .wrap{padding:0 16px}
+  .stat .n{font-size:1.7rem}
+}
 </style>
 </head>
 <body>
@@ -348,7 +365,7 @@ html,body{overflow-x:hidden}
       <div class="hero-copy">
       <span class="eyebrow reveal in"><span class="dot"></span> WordPress &amp; WooCommerce Developer · working worldwide</span>
       <h1><span class="h-line"><span>I build</span></span><span class="h-line"><span style="animation-delay:.14s"><span class="typed" id="typed" style="color:#E8C766">websites</span><span class="cursor big"></span></span></span><span class="h-line"><span style="animation-delay:.28s">that <span class="grad">grow</span> businesses.</span></span></h1>
-      <p class="lead">Business websites and online stores in WordPress, WooCommerce and Shopify, built properly and easy to manage, plus SEO, digital marketing and GMB optimization to get them found.</p>
+      <p class="lead">Business websites and online stores in WordPress, WooCommerce and Shopify, built properly, plus SEO, marketing and GMB optimization to get them found.</p>
       <div class="btns">
         <a class="btn" href="#work">See My Work →</a>
         <a class="btn ghost" href="#contact">Start a Project</a>
@@ -408,14 +425,40 @@ html,body{overflow-x:hidden}
       <div class="sec-head reveal">
         <div class="kicker">Packages &amp; Pricing</div>
         <h2>Pay per result, or one monthly plan</h2>
-        <p>These are the service packages I deliver: milestone-based SEO and growth work, where every step is paid on a report you can verify yourself, plus monthly plans for websites that need ongoing care.</p>
+        <p>Start with a main package: a complete website or store at one fixed price. Below that, milestone SEO and growth work paid on reports you can verify yourself, plus monthly plans for ongoing management.</p>
       </div>
 
-      <h3 class="reveal" style="font-size:1.25rem;margin-bottom:16px">Milestone Services: paid on delivery</h3>
+      <h3 class="reveal" style="font-size:1.25rem;margin-bottom:16px">Main Packages: fixed price, complete delivery</h3>
+      <div class="plans" style="margin:0 0 10px">
+        <div class="plan featured reveal">
+          <div class="flag">Main Package</div>
+          <h3>Business Website · WordPress</h3>
+          <div class="amt">$150<span> one-time</span></div>
+          <ul>
+            <li>Complete business website, designed and built end-to-end</li>
+            <li>Mobile-friendly, fast and easy to edit yourself</li>
+            <li>Pages, contact forms and launch setup included</li>
+            <li>Delivered ready to use</li>
+          </ul>
+        </div>
+        <div class="plan featured reveal d1">
+          <div class="flag">Main Package</div>
+          <h3>Shopify Store · Complete</h3>
+          <div class="amt">$50<span> one-time</span></div>
+          <ul>
+            <li>Complete Shopify store setup</li>
+            <li>Theme, catalog and collections structured to sell</li>
+            <li>Payments and shipping configured</li>
+            <li>Ready to take orders</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 class="reveal" style="font-size:1.25rem;margin:52px 0 16px">Milestone Services: paid on delivery</h3>
       <div class="miles">
         <div class="mile reveal"><h3>Technical SEO Audit &amp; Keyword Research</h3><p>A full audit report, errors found and the exact actions to fix them, prepared with Moz Pro and AIOSEO.</p><span class="price">$50 <small>per audit</small></span></div>
         <div class="mile reveal d1"><h3>Google Services Setup</h3><p>Your site connected to Search Console, Analytics, Tag Manager and PageSpeed, plus Microsoft Bing, the foundation everything else is measured with.</p><span class="price">$50 <small>one-time</small></span></div>
-        <div class="mile reveal d2"><h3>On-Page SEO Optimization</h3><p>Every page, post and image optimized to a 90%+ on-page score, with the report visible inside your own website.</p><span class="price">$2 <small>per page / post</small></span></div>
+        <div class="mile reveal d2"><h3>On-Page SEO Optimization</h3><p>Every page, post and image optimized to a 90%+ on-page score, with the report visible inside your own website.</p><span class="price">$5 <small>per page / post</small></span></div>
         <div class="mile reveal"><h3>Google Business Profile Optimization</h3><p>Every section of your profile completed, Q&amp;A, updates, offers, photos, covers and services, so local customers find you first.</p><span class="price">$50 <small>per profile</small></span></div>
         <div class="mile reveal d1"><h3>Backlink Development</h3><p>Link placements built and reported transparently, trackable in Moz Pro, SEMrush and Ahrefs.</p><span class="price">$50 <small>per campaign</small></span></div>
         <div class="mile reveal d2"><h3>Authority Building</h3><p>Domain Authority growth work, paid on the milestone: DA 33+ reached, verified in Moz Pro.</p><span class="price">$50 <small>on DA 33+</small></span></div>
@@ -556,8 +599,8 @@ html,body{overflow-x:hidden}
   <div class="orb b" style="opacity:.35"></div>
   <div class="wrap">
     <div class="kicker reveal" style="color:var(--gold);font-weight:600;letter-spacing:2.5px;font-size:.8rem;text-transform:uppercase">Contact</div>
-    <div class="big reveal" style="margin-top:14px">Have a store to build,<br>or one to <span>fix?</span></div>
-    <p class="reveal" style="color:var(--muted);max-width:560px;margin-top:16px">If you need a store or website built properly, or an existing one fixed, sped up, or managed, message me. I reply personally.</p>
+    <div class="big reveal" style="margin-top:14px">Have a website to build,<br>or one to <span>fix?</span></div>
+    <p class="reveal" style="color:var(--muted);max-width:560px;margin-top:16px">If you need a website or store built properly, an existing one fixed or sped up, or SEO and marketing to grow it, message me. I reply personally.</p>
     <div class="contact-row reveal">
       <a class="pill" href="mailto:irfanullah9295@gmail.com">✉ irfanullah9295@gmail.com</a>
       <a class="pill" href="https://www.linkedin.com/in/irfanullah-dev">LinkedIn →</a>
