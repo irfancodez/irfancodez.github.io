@@ -102,6 +102,28 @@ section{padding:96px 0;position:relative}
 .card h3{font-size:1.18rem;margin:14px 0 9px}
 .card p{color:var(--muted);font-size:.96rem}
 
+/* ---------- packages ---------- */
+.miles{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.mile{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;transition:.3s;backdrop-filter:blur(8px)}
+.mile:hover{transform:translateY(-4px);border-color:rgba(201,162,39,.55)}
+.mile h3{font-size:1.05rem;margin-bottom:8px}
+.mile p{color:var(--muted);font-size:.93rem}
+.mile .price{display:inline-block;margin-top:14px;font-family:'Sora';font-weight:800;font-size:1.25rem;color:var(--gold2)}
+.mile .price small{font-family:'Inter';font-weight:500;font-size:.8rem;color:var(--muted)}
+.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;margin-top:22px}
+.plan{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:32px;position:relative;transition:.3s;backdrop-filter:blur(8px)}
+.plan:hover{transform:translateY(-5px)}
+.plan.featured{border-color:rgba(201,162,39,.65);background:linear-gradient(165deg,rgba(201,162,39,.12),rgba(255,255,255,.03) 55%)}
+.plan .flag{position:absolute;top:22px;right:22px;font-size:.7rem;font-weight:600;letter-spacing:1.2px;color:#141414;background:linear-gradient(135deg,var(--gold),var(--gold2));padding:5px 11px;border-radius:999px;text-transform:uppercase}
+.plan h3{font-size:1.2rem}
+.plan .amt{font-family:'Sora';font-size:2.3rem;font-weight:800;margin:10px 0 2px}
+.plan .amt span{font-size:1rem;font-weight:600;color:var(--muted)}
+.plan ul{list-style:none;margin-top:16px;display:grid;gap:9px}
+.plan ul li{color:var(--muted);font-size:.94rem;padding-left:24px;position:relative}
+.plan ul li::before{content:"✓";position:absolute;left:0;color:var(--gold);font-weight:700}
+.pkg-note{margin-top:26px;border:1px dashed rgba(201,162,39,.45);border-radius:14px;padding:18px 22px;color:var(--muted);font-size:.96rem;text-align:center}
+.pkg-note strong{color:var(--gold2)}
+
 /* ---------- projects ---------- */
 .proj{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px}
 .proj .card{padding:32px}
@@ -170,6 +192,7 @@ footer .big span{color:var(--gold)}
       <a class="logo" href="#top">IRFAN <span>ULLAH</span></a>
       <ul>
         <li><a href="#services">Services</a></li>
+        <li><a href="#packages">Packages</a></li>
         <li><a href="#work">Work</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
@@ -224,6 +247,66 @@ footer .big span{color:var(--gold)}
         <div class="card reveal d1"><div class="no">/ 05</div><h3>GMB &amp; Digital Marketing</h3><p>Google Business Profile creation and optimization, with digital marketing support — so local customers find you first.</p></div>
         <div class="card reveal d2"><div class="no">/ 06</div><h3>Speed, Security &amp; Care</h3><p>Speed optimization, security hardening, customization, bug fixing and ongoing store management — a developer on call.</p></div>
       </div>
+    </div>
+  </section>
+
+  <!-- PACKAGES -->
+  <section id="packages" style="padding-top:30px">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="kicker">Packages &amp; Pricing</div>
+        <h2>Pay per result — or one monthly plan</h2>
+        <p>These are the service packages I deliver: milestone-based SEO and growth work, where every step is paid on a report you can verify yourself — plus monthly plans for websites that need ongoing care.</p>
+      </div>
+
+      <h3 class="reveal" style="font-size:1.25rem;margin-bottom:16px">Milestone Services — paid on delivery</h3>
+      <div class="miles">
+        <div class="mile reveal"><h3>Technical SEO Audit &amp; Keyword Research</h3><p>A full audit report — errors found and the exact actions to fix them — prepared with Moz Pro and AIOSEO.</p><span class="price">$50 <small>per audit</small></span></div>
+        <div class="mile reveal d1"><h3>Google Services Setup</h3><p>Your site connected to Search Console, Analytics, Tag Manager and PageSpeed, plus Microsoft Bing — the foundation everything else is measured with.</p><span class="price">$50 <small>one-time</small></span></div>
+        <div class="mile reveal d2"><h3>On-Page SEO Optimization</h3><p>Every page, post and image optimized to a 90%+ on-page score, with the report visible inside your own website.</p><span class="price">$2 <small>per page / post</small></span></div>
+        <div class="mile reveal"><h3>Google Business Profile Optimization</h3><p>Every section of your profile completed — Q&amp;A, updates, offers, photos, covers and services — so local customers find you first.</p><span class="price">$50 <small>per profile</small></span></div>
+        <div class="mile reveal d1"><h3>Backlink Development</h3><p>Link placements built and reported transparently — trackable in Moz Pro, SEMrush and Ahrefs.</p><span class="price">$50 <small>per campaign</small></span></div>
+        <div class="mile reveal d2"><h3>Authority Building</h3><p>Domain Authority growth work, paid on the milestone: DA 33+ reached, verified in Moz Pro.</p><span class="price">$50 <small>on DA 33+</small></span></div>
+        <div class="mile reveal"><h3>Keyword Ranking Improvement</h3><p>Ranking work per target keyword, verified in Moz Pro and Ahrefs.</p><span class="price">$10 <small>per keyword</small></span></div>
+        <div class="mile reveal d1"><h3>Organic Traffic Growth</h3><p>The result the steps above are built to produce — more visitors from Google search.</p><span class="price">Included <small>no separate charge</small></span></div>
+      </div>
+
+      <h3 class="reveal" style="font-size:1.25rem;margin:52px 0 4px">Monthly Plans</h3>
+      <div class="plans">
+        <div class="plan reveal">
+          <h3>Website Care</h3>
+          <div class="amt">$35<span> / month</span></div>
+          <ul>
+            <li>Regular updates</li>
+            <li>Troubleshooting &amp; fixes</li>
+            <li>New content uploads</li>
+            <li>Your site stays secure and up to date — no hassle on your end</li>
+          </ul>
+        </div>
+        <div class="plan reveal d1">
+          <h3>Website Management</h3>
+          <div class="amt">$100<span> / month</span></div>
+          <ul>
+            <li>Troubleshooting &amp; support</li>
+            <li>Plugin installs &amp; customization</li>
+            <li>Theme &amp; plugin updates</li>
+            <li>Security &amp; spam management</li>
+          </ul>
+        </div>
+        <div class="plan featured reveal d2">
+          <div class="flag">Most Complete</div>
+          <h3>Growth Package</h3>
+          <div class="amt">$250<span> / month</span></div>
+          <ul>
+            <li>A dedicated hour of work on your site, every day</li>
+            <li>Google Business Profile optimization, posts &amp; review replies</li>
+            <li>Complete on-page &amp; off-page SEO</li>
+            <li>Content uploads, troubleshooting, backups &amp; optimization</li>
+            <li>Competitor analysis &amp; paid campaign support</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pkg-note reveal"><strong>No report, no payment.</strong> Every milestone above is verified in a tool you can open yourself — Moz Pro, Ahrefs, Search Console, or your own dashboard.</div>
     </div>
   </section>
 
