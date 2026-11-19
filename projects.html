@@ -390,10 +390,10 @@ section[id],footer[id]{scroll-margin-top:84px}
         <button class="fbtn" data-f="maintenance">Maintenance</button>
       </div>
       <div class="pcount" id="pcount"></div>
-      <h3 class="reveal" style="font-size:1.25rem;margin:34px 0 4px">My Own Products</h3>
+      <h3 class="reveal" id="ownHead" style="font-size:1.25rem;margin:34px 0 4px">My Own Products</h3>
       <a class="prow reveal" href="https://tudocalcula.com" data-tags="development"><span class="grow"><h3>TudoCalcula</h3><span class="dom">tudocalcula.com</span><p>Free Brazilian labour calculators: 36 pages covering net salary, 13th salary, vacation, severance and FGTS, with every formula verified against the official tables.</p><span class="tags"><span class=tag>Development</span><span class="tag co">My Own Product</span></span></span><span class="arr">→</span></a>
       <a class="prow reveal" href="https://novixabrand.com" data-tags="development"><span class="grow"><h3>Novixa</h3><span class="dom">novixabrand.com</span><p>My own Shopify watch store: complete store setup with catalog and collections structured for a watches-only brand.</p><span class="tags"><span class=tag>Development</span><span class="tag co">My Own Store · Shopify</span></span></span><span class="arr">→</span></a>
-      <h3 class="reveal" style="font-size:1.25rem;margin:44px 0 4px">Client Projects</h3>
+      <h3 class="reveal" id="clientHead" style="font-size:1.25rem;margin:44px 0 4px">Client Projects</h3>
       <a class="prow reveal" href="https://sandsdocument.com" data-tags="development"><span class="grow"><h3>Sands Document</h3><span class="dom">sandsdocument.com</span><p>Website designed and developed for a document services company.</p><span class="tags"><span class="tag">Development</span><span class="tag co">Brand Brilliance</span></span></span><span class="arr">→</span></a>
       <a class="prow reveal" href="https://stalbans-removals.com" data-tags="development seo marketing"><span class="grow"><h3>St Albans Removals</h3><span class="dom">stalbans-removals.com</span><p>Removals company website developed with SEO and marketing.</p><span class="tags"><span class="tag">Development</span><span class="tag">SEO</span><span class="tag">Marketing</span><span class="tag co">Brand Brilliance</span></span></span><span class="arr">→</span></a>
       <a class="prow reveal" href="https://albancityremovals.co.uk" data-tags="development seo marketing"><span class="grow"><h3>Alban City Removals</h3><span class="dom">albancityremovals.co.uk</span><p>Removals website developed with SEO and marketing.</p><span class="tags"><span class="tag">Development</span><span class="tag">SEO</span><span class="tag">Marketing</span><span class="tag co">Brand Brilliance</span></span></span><span class="arr">→</span></a>
@@ -460,8 +460,10 @@ if (burger && mnav) {
 var rows = Array.prototype.slice.call(document.querySelectorAll('.prow'));
 var pcount = document.getElementById('pcount');
 function applyFilter(f){
-  var n = 0;
-  rows.forEach(function(r){ var show = (f === 'all' || (r.getAttribute('data-tags') || '').split(' ').indexOf(f) >= 0); r.style.display = show ? '' : 'none'; if (show) n++; });
+  var n = 0, ownVis = 0, cliVis = 0;
+  rows.forEach(function(r, i){ var show = (f === 'all' || (r.getAttribute('data-tags') || '').split(' ').indexOf(f) >= 0); r.style.display = show ? '' : 'none'; if (show) { n++; if (i < 2) ownVis++; else cliVis++; } });
+  document.getElementById('ownHead').style.display = ownVis ? '' : 'none';
+  document.getElementById('clientHead').style.display = cliVis ? '' : 'none';
   pcount.textContent = 'Showing ' + n + ' of ' + rows.length + ' projects';
 }
 document.querySelectorAll('.fbtn').forEach(function(b){ b.addEventListener('click', function(){ document.querySelectorAll('.fbtn').forEach(function(x){ x.classList.remove('on'); }); b.classList.add('on'); applyFilter(b.getAttribute('data-f')); }); });
