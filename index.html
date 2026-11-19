@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Irfan Ullah — WordPress & WooCommerce Developer</title>
 <meta name="description" content="Irfan Ullah is a WordPress & WooCommerce Developer building e-commerce solutions for businesses and agencies — WordPress, WooCommerce and Shopify stores, SEO, Google Business Profile creation & optimization, and digital marketing. 145+ websites developed for clients in the UK, Canada, Australia and Pakistan.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231B2A4A'/%3E%3Ctext x='32' y='43' font-family='Arial,sans-serif' font-size='25' font-weight='700' fill='%23C9A227' text-anchor='middle'%3EIU%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#0B1120">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -45,8 +47,9 @@ a{color:inherit;text-decoration:none}
 header{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
 header.scrolled{background:rgba(11,17,32,.82);backdrop-filter:blur(14px);border-color:var(--line)}
 nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
-.logo{font-family:'Sora';font-weight:800;letter-spacing:.6px;font-size:1.1rem}
+.logo{font-family:'Sora';font-weight:800;letter-spacing:.6px;font-size:1.1rem;display:flex;align-items:center;gap:11px}
 .logo span{color:var(--gold)}
+.logo-mark{width:38px;height:38px;border-radius:11px;background:linear-gradient(135deg,#22335c,#0d1730);border:1px solid rgba(201,162,39,.6);color:var(--gold2);display:grid;place-items:center;font-size:.92rem;letter-spacing:.5px;box-shadow:0 6px 18px rgba(0,0,0,.35)}
 nav ul{display:flex;gap:30px;list-style:none}
 nav ul a{color:var(--muted);font-size:.95rem;font-weight:500;position:relative;padding:4px 0}
 nav ul a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--gold);transition:width .3s}
@@ -61,7 +64,7 @@ nav ul a:hover{color:#fff} nav ul a:hover::after{width:100%}
   padding:7px 16px;border-radius:999px;font-size:.85rem;color:var(--muted);letter-spacing:.4px}
 .eyebrow .dot{width:8px;height:8px;border-radius:50%;background:#3ddc84;box-shadow:0 0 0 0 rgba(61,220,132,.6);animation:pulse 2s infinite}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(61,220,132,.55)}70%{box-shadow:0 0 0 9px rgba(61,220,132,0)}100%{box-shadow:0 0 0 0 rgba(61,220,132,0)}}
-.hero h1{font-size:clamp(2.6rem,6.2vw,4.6rem);line-height:1.06;font-weight:800;margin:26px 0 20px;letter-spacing:-.5px}
+.hero h1{font-size:clamp(2.7rem,6.4vw,4.9rem);line-height:1.06;font-weight:800;margin:26px 0 20px;letter-spacing:-.5px}
 .hero h1 .grad{background:linear-gradient(92deg,var(--gold) 10%,var(--gold2) 45%,#fff2c9 70%,var(--gold) 100%);
   background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 5s linear infinite}
 @keyframes shine{to{background-position:200% center}}
@@ -171,6 +174,64 @@ footer .big span{color:var(--gold)}
 .pill:hover{border-color:var(--gold);color:var(--gold2);transform:translateY(-3px)}
 .foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:.88rem;border-top:1px solid var(--line);padding-top:24px}
 
+/* ---------- v3 visual layer ---------- */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--gold),var(--gold2));z-index:60;box-shadow:0 0 12px rgba(201,162,39,.7)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+@media(max-width:920px){.hero-grid{grid-template-columns:1fr}}
+.hero-visual{position:relative;perspective:1200px}
+.frame{background:#0d1526;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 34px 70px rgba(0,0,0,.5);transform:rotateY(-7deg) rotateX(2deg);transition:transform .5s cubic-bezier(.2,.6,.2,1)}
+.hero-visual:hover .frame{transform:rotateY(-2deg) rotateX(0deg)}
+.frame .bar{display:flex;align-items:center;gap:7px;padding:11px 14px;background:rgba(255,255,255,.05);border-bottom:1px solid var(--line)}
+.frame .bar i{width:11px;height:11px;border-radius:50%;background:#2a3757;display:block}
+.frame .bar i:first-child{background:#e2605f}.frame .bar i:nth-child(2){background:#e8c766}.frame .bar i:nth-child(3){background:#3ddc84}
+.frame .bar span{margin-left:9px;font-size:.78rem;color:var(--muted);background:rgba(255,255,255,.06);border-radius:6px;padding:3px 12px;letter-spacing:.3px}
+.frame img{width:100%;height:auto;display:block;aspect-ratio:1200/900;object-fit:cover;object-position:top;background:linear-gradient(140deg,#16223f,#0d1526)}
+.float-chip{position:absolute;display:flex;align-items:center;gap:9px;background:rgba(13,21,38,.88);border:1px solid rgba(201,162,39,.45);backdrop-filter:blur(10px);border-radius:13px;padding:11px 16px;font-family:'Sora';font-weight:700;font-size:.95rem;box-shadow:0 18px 40px rgba(0,0,0,.45);animation:bob 5s ease-in-out infinite;z-index:3}
+.float-chip small{display:block;font-family:'Inter';font-weight:500;color:var(--muted);font-size:.72rem}
+.float-chip.c1{top:26px;left:-26px}
+.float-chip.c2{bottom:30px;right:-18px;animation-delay:1.4s}
+@media(max-width:920px){.float-chip.c1{left:6px}.float-chip.c2{right:6px}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-11px)}}
+.split{display:grid;grid-template-columns:1.08fr .92fr;gap:46px;align-items:center;margin-bottom:74px}
+.split:last-of-type{margin-bottom:10px}
+.split .frame{transform:none}
+.split .frame:hover{transform:translateY(-5px)}
+.split.rev .frame{order:2}
+@media(max-width:920px){.split{grid-template-columns:1fr}.split.rev .frame{order:0}}
+.flag2{display:inline-block;font-size:.72rem;font-weight:600;letter-spacing:1.2px;color:#141414;background:linear-gradient(135deg,var(--gold),var(--gold2));padding:5px 11px;border-radius:999px;text-transform:uppercase;margin-bottom:14px}
+.split-txt h3{font-size:1.7rem;margin-bottom:4px}
+.split-txt h3 a:hover{color:var(--gold2)}
+.split-txt .role{color:var(--gold2);font-weight:500;margin-bottom:12px}
+.split-txt p{color:var(--muted)}
+.ticks{list-style:none;margin-top:16px;display:grid;gap:8px}
+.ticks li{color:var(--muted);font-size:.95rem;padding-left:24px;position:relative}
+.ticks li::before{content:"✓";position:absolute;left:0;color:var(--gold);font-weight:700}
+.split-txt .go{display:inline-flex;gap:8px;margin-top:20px;font-weight:600;color:#fff;border-bottom:2px solid var(--gold);padding-bottom:2px;transition:.3s}
+.split-txt .go:hover{color:var(--gold2);gap:13px}
+.client .thumb{width:86px;height:56px;object-fit:cover;object-position:top;border-radius:9px;border:1px solid var(--line);flex:none;background:#16223f}
+.client .grow{flex:1}
+.me{display:flex;align-items:center;gap:16px;margin-bottom:22px}
+.me img{width:74px;height:74px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);box-shadow:0 0 0 5px rgba(201,162,39,.16)}
+.me strong{display:block;font-family:'Sora';font-size:1.12rem}
+.me span{color:var(--muted);font-size:.9rem}
+.reveal-l{opacity:0;transform:translateX(-34px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1)}
+.reveal-r{opacity:0;transform:translateX(34px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1)}
+.reveal-l.in,.reveal-r.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){.reveal-l,.reveal-r{opacity:1;transform:none}.float-chip{animation:none}}
+
+
+/* hero wow layer */
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(620px 360px at var(--sx,72%) var(--sy,22%),rgba(201,162,39,.12),transparent 65%);pointer-events:none;transition:background .25s}
+.h-line{display:block;overflow:hidden;padding-bottom:.08em;margin-bottom:-.08em}
+.h-line>span{display:inline-block;animation:rise .95s cubic-bezier(.2,.65,.2,1) both}
+@keyframes rise{from{transform:translateY(112%);opacity:0}to{transform:translateY(0);opacity:1}}
+.me-chip{position:absolute;left:-30px;bottom:-22px;display:flex;align-items:center;gap:12px;background:rgba(13,21,38,.9);border:1px solid rgba(201,162,39,.45);backdrop-filter:blur(10px);border-radius:14px;padding:11px 17px 11px 11px;box-shadow:0 18px 40px rgba(0,0,0,.45);animation:bob 6s ease-in-out infinite;animation-delay:.7s;z-index:3}
+.me-chip img{width:46px;height:46px;border-radius:50%;object-fit:cover;border:2px solid var(--gold)}
+.me-chip strong{display:block;font-family:'Sora';font-size:.95rem;line-height:1.25}
+.me-chip small{color:var(--muted);font-size:.72rem}
+@media(max-width:920px){.me-chip{left:6px}}
+@media (prefers-reduced-motion: reduce){.h-line>span{animation:none}.me-chip{animation:none}}
+
 /* ---------- reveal ---------- */
 .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1)}
 .reveal.in{opacity:1;transform:none}
@@ -183,13 +244,14 @@ footer .big span{color:var(--gold)}
 </style>
 </head>
 <body>
+<div id="progress"></div>
 <div class="bg-fx"></div>
 <div class="bg-grid"></div>
 
 <header id="hdr">
   <div class="wrap">
     <nav>
-      <a class="logo" href="#top">IRFAN <span>ULLAH</span></a>
+      <a class="logo" href="#top"><span class="logo-mark">IU</span>IRFAN <span>ULLAH</span></a>
       <ul>
         <li><a href="#services">Services</a></li>
         <li><a href="#packages">Packages</a></li>
@@ -208,13 +270,26 @@ footer .big span{color:var(--gold)}
     <div class="orb a"></div><div class="orb b"></div>
     <div class="rings"><i></i></div>
     <div class="wrap">
+     <div class="hero-grid">
+      <div class="hero-copy">
       <span class="eyebrow reveal in"><span class="dot"></span> WordPress &amp; WooCommerce Developer — Islamabad, working worldwide</span>
-      <h1>I build online stores<br>that are made to <span class="grad">sell.</span></h1>
+      <h1><span class="h-line"><span>I build online stores</span></span><span class="h-line"><span style="animation-delay:.16s">that are made to <span class="grad">sell.</span></span></span></h1>
       <p class="lead">E-commerce solutions for businesses and agencies — WordPress, WooCommerce and Shopify stores that are built properly, load fast, and are easy to manage. And because a store nobody finds doesn't sell: SEO, Google Business Profile and digital marketing to get it seen.</p>
       <div class="btns">
         <a class="btn" href="#work">See My Work →</a>
         <a class="btn ghost" href="#contact">Start a Project</a>
       </div>
+      </div>
+      <div class="hero-visual reveal in">
+        <div class="frame">
+          <div class="bar"><i></i><i></i><i></i><span>velzorah.shop</span></div>
+          <img src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fvelzorah.shop?w=1200" alt="Velzorah — my WooCommerce camera store" onerror="this.style.display='none'">
+        </div>
+        <div class="float-chip c1">145+<small>Websites Developed</small></div>
+        <div class="float-chip c2">My Own Store<small>Built &amp; run by me</small></div>
+        <div class="me-chip"><img src="https://avatars.githubusercontent.com/u/296989866?v=4" alt="Irfan Ullah" onerror="this.style.display='none'"><div><strong>Irfan Ullah</strong><small>WordPress &amp; WooCommerce Developer</small></div></div>
+      </div>
+     </div>
       <div class="stats">
         <div class="stat reveal in"><div class="num"><span data-count="145">0</span><em>+</em></div><div class="lbl">Websites Developed &amp; Optimized</div></div>
         <div class="stat reveal in d1"><div class="num"><span data-count="4">0</span></div><div class="lbl">Years of Experience</div></div>
@@ -318,26 +393,45 @@ footer .big span{color:var(--gold)}
         <h2>Products of my own, work for clients</h2>
         <p>Two stores are mine — designed, built and run by me. The client work was delivered with Daain Communication (Pakistan) and Brand Brilliance (US).</p>
       </div>
-      <div class="proj">
-        <div class="card reveal">
-          <div class="flag">Live Product</div>
+      <div class="split reveal-l">
+        <div class="frame">
+          <div class="bar"><i></i><i></i><i></i><span>tudocalcula.com</span></div>
+          <img src="https://s0.wp.com/mshots/v1/https%3A%2F%2Ftudocalcula.com?w=1200" alt="TudoCalcula — Brazilian labour calculators website" loading="lazy" onerror="this.style.display='none'">
+        </div>
+        <div class="split-txt">
+          <div class="flag2">Live Product</div>
           <h3><a href="https://tudocalcula.com">TudoCalcula</a></h3>
           <div class="role">Founder &amp; Developer</div>
-          <p>A free Brazilian labour-calculators website — net salary, 13th salary, vacation, severance and more, with calculations verified against the official tables. Static HTML/CSS/JavaScript, built for search traffic in Brazil.</p>
+          <p>A free Brazilian labour-calculators website — net salary, 13th salary, vacation, severance and more, with calculations verified against the official tables.</p>
+          <ul class="ticks"><li>36 calculator pages, built for search traffic in Brazil</li><li>Static HTML / CSS / JavaScript — fast by design</li><li>Formulas verified against official Brazilian tables</li></ul>
           <a class="go" href="https://tudocalcula.com">Visit Live Site →</a>
         </div>
-        <div class="card reveal d1">
-          <div class="flag">My Own Store</div>
+      </div>
+      <div class="split rev reveal-r">
+        <div class="frame">
+          <div class="bar"><i></i><i></i><i></i><span>velzorah.shop</span></div>
+          <img src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fvelzorah.shop?w=1200" alt="Velzorah — WooCommerce camera store" loading="lazy" onerror="this.style.display='none'">
+        </div>
+        <div class="split-txt">
+          <div class="flag2">My Own Store</div>
           <h3><a href="https://velzorah.shop">Velzorah</a></h3>
           <div class="role">Founder &amp; Developer</div>
           <p>A WooCommerce camera store built end-to-end — design, products, Cash on Delivery and free nationwide shipping across Pakistan. Designed, launched and managed by me.</p>
+          <ul class="ticks"><li>WooCommerce + Elementor, built end-to-end</li><li>Cash on Delivery with free nationwide shipping</li><li>Designed, launched and run by me</li></ul>
           <a class="go" href="https://velzorah.shop">Visit Live Store →</a>
         </div>
-        <div class="card reveal d2">
-          <div class="flag">My Own Store</div>
+      </div>
+      <div class="split reveal-l">
+        <div class="frame">
+          <div class="bar"><i></i><i></i><i></i><span>novixabrand.com</span></div>
+          <img src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fnovixabrand.com?w=1200" alt="Novixa — Shopify watch store" loading="lazy" onerror="this.style.display='none'">
+        </div>
+        <div class="split-txt">
+          <div class="flag2">My Own Store</div>
           <h3><a href="https://novixabrand.com">Novixa</a></h3>
           <div class="role">Founder &amp; Developer</div>
           <p>A complete Shopify watch store — catalog, collections and full store setup for a watches-only brand.</p>
+          <ul class="ticks"><li>Complete Shopify store setup</li><li>Catalog and collections structured to sell</li><li>A watches-only brand, built to launch</li></ul>
           <a class="go" href="https://novixabrand.com">Visit Live Store →</a>
         </div>
       </div>
@@ -345,16 +439,16 @@ footer .big span{color:var(--gold)}
       <h3 class="reveal" style="font-size:1.25rem;margin:52px 0 4px">Selected Client Work</h3>
       <p class="reveal" style="color:var(--muted);margin-bottom:8px">A sample of the 145+ websites — business sites, e-commerce, SEO and long-term maintenance.</p>
       <div class="client-grid">
-        <a class="client reveal" href="https://sandsdocument.com"><span><span class="t">Sands Document</span><br><span class="s">Document services · Brand Brilliance</span></span><span class="arr">→</span></a>
-        <a class="client reveal" href="https://stalbans-removals.com"><span><span class="t">St Albans Removals</span><br><span class="s">Removals, UK · Brand Brilliance</span></span><span class="arr">→</span></a>
-        <a class="client reveal" href="https://albancityremovals.co.uk"><span><span class="t">Alban City Removals</span><br><span class="s">Removals, UK · Brand Brilliance</span></span><span class="arr">→</span></a>
-        <a class="client reveal" href="https://nadraservice.co.uk"><span><span class="t">NADRA Service</span><br><span class="s">Services, UK · Brand Brilliance</span></span><span class="arr">→</span></a>
-        <a class="client reveal" href="https://11elevenaccountancy.co.uk"><span><span class="t">11Eleven Accountancy</span><br><span class="s">Full SEO + maintenance · Brand Brilliance</span></span><span class="arr">→</span></a>
-        <a class="client reveal" href="https://alphawears.com.au"><span><span class="t">Alpha Wears</span><br><span class="s">E-commerce, Australia · Brand Brilliance</span></span><span class="arr">→</span></a>
-        <a class="client reveal" href="https://fstravel.co.uk"><span><span class="t">F&amp;S Travel</span><br><span class="s">Development + SEO + marketing · Daain</span></span><span class="arr">→</span></a>
-        <a class="client reveal" href="https://qatcan.ca"><span><span class="t">QATCAN</span><br><span class="s">E-commerce, Canada · Daain</span></span><span class="arr">→</span></a>
-        <a class="client reveal" href="https://webuydirect.co.uk"><span><span class="t">We Buy Direct</span><br><span class="s">E-commerce, UK · Daain</span></span><span class="arr">→</span></a>
-        <a class="client reveal" href="https://hertscleaningandmaintenance.com"><span><span class="t">Herts Cleaning &amp; Maintenance</span><br><span class="s">Services, UK · Daain</span></span><span class="arr">→</span></a>
+        <a class="client reveal" href="https://sandsdocument.com"><img class="thumb" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fsandsdocument.com?w=400" alt="" loading="lazy" onerror="this.remove()"><span class="grow"><span class="t">Sands Document</span><br><span class="s">Document services · Brand Brilliance</span></span><span class="arr">→</span></a>
+        <a class="client reveal" href="https://stalbans-removals.com"><img class="thumb" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fstalbans-removals.com?w=400" alt="" loading="lazy" onerror="this.remove()"><span class="grow"><span class="t">St Albans Removals</span><br><span class="s">Removals, UK · Brand Brilliance</span></span><span class="arr">→</span></a>
+        <a class="client reveal" href="https://albancityremovals.co.uk"><img class="thumb" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Falbancityremovals.co.uk?w=400" alt="" loading="lazy" onerror="this.remove()"><span class="grow"><span class="t">Alban City Removals</span><br><span class="s">Removals, UK · Brand Brilliance</span></span><span class="arr">→</span></a>
+        <a class="client reveal" href="https://nadraservice.co.uk"><img class="thumb" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fnadraservice.co.uk?w=400" alt="" loading="lazy" onerror="this.remove()"><span class="grow"><span class="t">NADRA Service</span><br><span class="s">Services, UK · Brand Brilliance</span></span><span class="arr">→</span></a>
+        <a class="client reveal" href="https://11elevenaccountancy.co.uk"><img class="thumb" src="https://s0.wp.com/mshots/v1/https%3A%2F%2F11elevenaccountancy.co.uk?w=400" alt="" loading="lazy" onerror="this.remove()"><span class="grow"><span class="t">11Eleven Accountancy</span><br><span class="s">Full SEO + maintenance · Brand Brilliance</span></span><span class="arr">→</span></a>
+        <a class="client reveal" href="https://alphawears.com.au"><img class="thumb" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Falphawears.com.au?w=400" alt="" loading="lazy" onerror="this.remove()"><span class="grow"><span class="t">Alpha Wears</span><br><span class="s">E-commerce, Australia · Brand Brilliance</span></span><span class="arr">→</span></a>
+        <a class="client reveal" href="https://fstravel.co.uk"><img class="thumb" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Ffstravel.co.uk?w=400" alt="" loading="lazy" onerror="this.remove()"><span class="grow"><span class="t">F&amp;S Travel</span><br><span class="s">Development + SEO + marketing · Daain</span></span><span class="arr">→</span></a>
+        <a class="client reveal" href="https://qatcan.ca"><img class="thumb" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fqatcan.ca?w=400" alt="" loading="lazy" onerror="this.remove()"><span class="grow"><span class="t">QATCAN</span><br><span class="s">E-commerce, Canada · Daain</span></span><span class="arr">→</span></a>
+        <a class="client reveal" href="https://webuydirect.co.uk"><img class="thumb" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fwebuydirect.co.uk?w=400" alt="" loading="lazy" onerror="this.remove()"><span class="grow"><span class="t">We Buy Direct</span><br><span class="s">E-commerce, UK · Daain</span></span><span class="arr">→</span></a>
+        <a class="client reveal" href="https://hertscleaningandmaintenance.com"><img class="thumb" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fhertscleaningandmaintenance.com?w=400" alt="" loading="lazy" onerror="this.remove()"><span class="grow"><span class="t">Herts Cleaning &amp; Maintenance</span><br><span class="s">Services, UK · Daain</span></span><span class="arr">→</span></a>
       </div>
     </div>
   </section>
@@ -378,6 +472,7 @@ footer .big span{color:var(--gold)}
       </div>
       <div class="two">
         <div class="about reveal">
+          <div class="me"><img src="https://avatars.githubusercontent.com/u/296989866?v=4" alt="Irfan Ullah" onerror="this.style.display='none'"><div><strong>Irfan Ullah</strong><span>WordPress &amp; WooCommerce Developer · Islamabad, Pakistan</span></div></div>
           <p>I'm a <strong>WordPress &amp; WooCommerce Developer</strong> with <strong>4 years of experience</strong> and <strong>145+ websites developed</strong>, for clients in Pakistan and internationally — including the UK, Canada and Australia.</p>
           <p>On my own projects I personally handle <strong>planning, quality checks and client communication</strong>, supported by a small team of WordPress developers and SEO specialists. The result: agency-level delivery, with one person accountable for your project from first call to launch.</p>
           <div class="stack">
@@ -438,7 +533,7 @@ addEventListener('scroll', function(){ hdr.classList.toggle('scrolled', scrollY 
 var io = new IntersectionObserver(function(es){
   es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
 },{threshold:.12});
-document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+document.querySelectorAll('.reveal, .reveal-l, .reveal-r').forEach(function(el){ io.observe(el); });
 
 // animated counters
 var cio = new IntersectionObserver(function(es){
@@ -460,6 +555,22 @@ document.querySelectorAll('.card').forEach(function(c){
     c.style.setProperty('--mx', ((ev.clientX - r.left)/r.width*100) + '%');
     c.style.setProperty('--my', ((ev.clientY - r.top)/r.height*100) + '%');
   });
+});
+
+// scroll progress bar
+var prog = document.getElementById('progress');
+addEventListener('scroll', function(){
+  var h = document.documentElement;
+  var p = h.scrollTop / (h.scrollHeight - h.clientHeight) * 100;
+  prog.style.width = p + '%';
+}, {passive:true});
+
+// hero spotlight follows the mouse
+var heroEl = document.querySelector('.hero');
+if (heroEl) heroEl.addEventListener('pointermove', function(ev){
+  var r = heroEl.getBoundingClientRect();
+  heroEl.style.setProperty('--sx', ((ev.clientX - r.left)/r.width*100) + '%');
+  heroEl.style.setProperty('--sy', ((ev.clientY - r.top)/r.height*100) + '%');
 });
 </script>
 </body>
