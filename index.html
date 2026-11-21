@@ -380,6 +380,10 @@ section[id],footer[id]{scroll-margin-top:84px}
 .beat .bn{font-family:'Sora';font-weight:800;color:var(--gold);font-size:.85rem;letter-spacing:2px;text-transform:uppercase}
 .beat h3{margin:8px 0 6px;font-size:1.12rem}
 .beat p{color:var(--muted);font-size:.95rem}
+.steps.res{grid-template-columns:repeat(4,1fr)}
+@media(max-width:1000px){.steps.res{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.steps.res{grid-template-columns:1fr}}
+.res-score{font-family:'Sora';font-weight:800;font-size:2.2rem;color:var(--gold2);line-height:1}
 .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:24px}
 .step{border-top:1px solid var(--line);padding-top:16px}
 .step .n{font-family:'Sora';font-weight:800;font-size:1.6rem;color:rgba(201,162,39,.4)}
@@ -631,6 +635,24 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--gold);outline-offse
       </div>
     </div>
   </section>
+
+  <!-- SEO RESULTS -->
+  <section id="results" style="padding-top:30px">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="kicker">SEO Results</div>
+        <h2>Real audit scores, real client sites</h2>
+        <p>From technical SEO audits delivered for client websites. Every score and count below comes straight from the audit reports.</p>
+      </div>
+      <div class="steps res">
+      <div class="step reveal"><div class="res-score">100</div><h3>F&S Travel</h3><p>Ahrefs health score 100 after a full technical SEO audit and optimisation, with 248 issues reviewed and site speed resolved.</p></div>
+<div class="step reveal d1"><div class="res-score">99</div><h3>Zenstone</h3><p>Health score held at 99 while warnings fell from 837 to 731 and errors from 17 to 14 across 2,765 crawled URLs.</p></div>
+<div class="step reveal d2"><div class="res-score">93</div><h3>Zenvillas</h3><p>Health score 93 (Excellent) at audit, with 137 technical, URL security and metadata issues fixed.</p></div>
+<div class="step reveal d3"><div class="res-score">89</div><h3>S&S Documents</h3><p>644 issues worked through across 778 crawled URLs and 18,294 links, with a full PageSpeed review included.</p></div>
+      </div>
+    </div>
+  </section>
+
 
 <!-- PACKAGES -->
   <section id="packages" style="padding-top:30px">
