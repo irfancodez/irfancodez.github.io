@@ -396,6 +396,44 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--gold);outline-offse
 }
 @media(max-width:560px){.steps{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.sc-img{transition:none}.sc-img.kb{animation:none}.cap-body{transition:none}}
+
+/* ===== v4.3 motion package ===== */
+.reveal,.reveal-l,.reveal-r{filter:blur(6px)}
+.reveal.in,.reveal-l.in,.reveal-r.in{filter:blur(0)}
+.reveal{transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1),filter .8s ease}
+.kicker{display:inline-flex;align-items:center;gap:12px}
+.kicker::before{content:"";width:0;height:1px;background:var(--gold);transition:width .9s cubic-bezier(.2,.6,.2,1) .15s;flex:none}
+.in .kicker::before,.kicker.in::before{width:42px}
+.sec-head.in h2{animation:h2in .9s cubic-bezier(.2,.65,.2,1) both}
+@keyframes h2in{from{opacity:0;transform:translateY(16px);filter:blur(6px)}to{opacity:1;transform:none;filter:blur(0)}}
+.steps .step:nth-child(2),.beats .beat:nth-child(2){transition-delay:.08s}
+.steps .step:nth-child(3),.beats .beat:nth-child(3){transition-delay:.16s}
+.steps .step:nth-child(4){transition-delay:.24s}
+.steps .step:nth-child(5){transition-delay:.32s}
+.client-grid .client:nth-child(2){transition-delay:.05s}.client-grid .client:nth-child(3){transition-delay:.1s}
+.client-grid .client:nth-child(4){transition-delay:.15s}.client-grid .client:nth-child(5){transition-delay:.2s}
+.client-grid .client:nth-child(6){transition-delay:.25s}
+.btn{position:relative;overflow:hidden}
+.btn::after{content:"";position:absolute;top:0;left:-80%;width:45%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-20deg);transition:left .6s ease;pointer-events:none}
+.btn:hover::after{left:135%}
+.cap-head{transition:padding .3s ease,background .3s ease}
+.cap-head:hover{background:linear-gradient(90deg,rgba(201,162,39,.08),transparent 65%);padding-left:14px}
+.client{transition:transform .3s ease,border-color .3s ease,opacity .8s cubic-bezier(.2,.6,.2,1),filter .8s ease}
+.client:hover{transform:translateX(6px);border-color:rgba(201,162,39,.45)}
+.client .thumb{transition:transform .45s ease}
+.client:hover .thumb{transform:scale(1.07)}
+.marquee:hover .track{animation-play-state:paused}
+.sc-item:hover{transform:translateX(4px)}
+.sc-frame{will-change:transform;position:relative}
+.sc-glare{position:absolute;inset:0;background:radial-gradient(560px circle at var(--gx,50%) var(--gy,50%),rgba(232,199,102,.13),transparent 46%);opacity:0;transition:opacity .3s;pointer-events:none;z-index:2}
+.sc-frame:hover .sc-glare{opacity:1}
+.qcover{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:13px;background:radial-gradient(700px 340px at 50% 0%,#1d2c50,#0d1526 70%);text-align:center;padding:20px}
+.qc-name{font-family:'Sora';font-weight:800;font-size:clamp(2rem,4.6vw,3.2rem);letter-spacing:6px;color:#fff}
+.qc-rule{width:64px;height:3px;background:var(--gold);border-radius:2px}
+.qc-sub{color:var(--muted);font-size:1rem;letter-spacing:1px}
+.qc-chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:6px}
+.qc-chips span{border:1px solid rgba(201,162,39,.45);color:var(--gold2);border-radius:999px;padding:6px 13px;font-size:.8rem}
+@media(prefers-reduced-motion:reduce){.sec-head.in h2{animation:none}.btn::after{display:none}.reveal,.reveal-l,.reveal-r{filter:none}}
 </style>
 </head>
 <body>
@@ -497,10 +535,11 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--gold);outline-offse
             <div class="sc-stage" id="scPanel" role="tabpanel" aria-labelledby="scTab0">
           <img class="sc-img on kb" src="https://image.thum.io/get/width/1000/https://stalbans-removals.com" data-m="https://s0.wp.com/mshots/v1/https%3A%2F%2Fstalbans-removals.com?w=1000" alt="St Albans Removals website screenshot" loading="eager" onerror="if(!this.dataset.f){this.dataset.f='1';this.src=this.dataset.m}else{this.style.opacity=0}">
           <img class="sc-img" src="https://image.thum.io/get/width/1000/https://fstravel.co.uk" data-m="https://s0.wp.com/mshots/v1/https%3A%2F%2Ffstravel.co.uk?w=1000" alt="F&S Travel website screenshot" loading="lazy" onerror="if(!this.dataset.f){this.dataset.f='1';this.src=this.dataset.m}else{this.style.opacity=0}">
-          <img class="sc-img" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fqatcan.ca?w=1240" data-m="https://image.thum.io/get/width/1240/https://qatcan.ca" alt="QATCAN website screenshot" loading="lazy" onerror="if(!this.dataset.f){this.dataset.f='1';this.src=this.dataset.m}else{this.style.opacity=0}">
+          <div class="sc-img qcover" role="img" aria-label="QATCAN e-commerce website cover"><span class="qc-name">QATCAN</span><span class="qc-rule"></span><span class="qc-sub">E-Commerce · Canada</span><span class="qc-chips"><span>Home &amp; DIY</span><span>Personal Care</span><span>Fashion &amp; Beauty</span><span>Electronics</span></span></div>
           <img class="sc-img" src="https://image.thum.io/get/width/1000/https://11elevenaccountancy.co.uk" data-m="https://s0.wp.com/mshots/v1/https%3A%2F%2F11elevenaccountancy.co.uk?w=1000" alt="11Eleven Accountancy website screenshot" loading="lazy" onerror="if(!this.dataset.f){this.dataset.f='1';this.src=this.dataset.m}else{this.style.opacity=0}">
           <img class="sc-img" src="https://image.thum.io/get/width/1000/https://nadraservice.co.uk" data-m="https://s0.wp.com/mshots/v1/https%3A%2F%2Fnadraservice.co.uk?w=1000" alt="NADRA Service website screenshot" loading="lazy" onerror="if(!this.dataset.f){this.dataset.f='1';this.src=this.dataset.m}else{this.style.opacity=0}">
             </div>
+            <div class="sc-glare" aria-hidden="true"></div>
           </div>
           <div class="sc-meta">
             <div class="sc-mtop"><h3 id="scName">St Albans Removals</h3><span class="sc-count" id="scCount">01 / 05</span></div>
@@ -944,6 +983,53 @@ if (tEl) {
       if (!was) { cap.classList.add('open'); h.setAttribute('aria-expanded', 'true'); }
     });
   });
+})();
+</script>
+
+<script>
+// v4.3 motion: showcase tilt + glare, own-products image parallax
+(function(){
+  var fine = matchMedia('(pointer:fine)').matches;
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!fine || reduce) return;
+  var frame = document.querySelector('.sc-frame');
+  if (frame) {
+    frame.style.transition = 'transform .5s cubic-bezier(.2,.6,.2,1)';
+    frame.addEventListener('pointermove', function(e){
+      var r = frame.getBoundingClientRect();
+      var x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+      frame.style.transition = 'transform .12s ease-out';
+      frame.style.transform = 'perspective(1100px) rotateY(' + ((x - .5) * 5).toFixed(2) + 'deg) rotateX(' + ((.5 - y) * 4).toFixed(2) + 'deg)';
+      frame.style.setProperty('--gx', (x * 100) + '%');
+      frame.style.setProperty('--gy', (y * 100) + '%');
+    });
+    frame.addEventListener('pointerleave', function(){
+      frame.style.transition = 'transform .6s cubic-bezier(.2,.6,.2,1)';
+      frame.style.transform = '';
+    });
+  }
+  var plx = [];
+  document.querySelectorAll('.split .frame img, .split .frame .cover').forEach(function(el){
+    el.style.transform = 'scale(1.14)';
+    el.style.willChange = 'transform';
+    plx.push(el);
+  });
+  if (plx.length) {
+    var ticking = false;
+    function upd(){
+      ticking = false;
+      var vh = innerHeight;
+      plx.forEach(function(el){
+        var f = el.closest('.frame'); if (!f) return;
+        var r = f.getBoundingClientRect();
+        if (r.bottom < -80 || r.top > vh + 80) return;
+        var p = (r.top + r.height / 2 - vh / 2) / vh;
+        el.style.transform = 'scale(1.14) translateY(' + (p * -16).toFixed(1) + 'px)';
+      });
+    }
+    addEventListener('scroll', function(){ if (!ticking) { ticking = true; requestAnimationFrame(upd); } }, {passive:true});
+    upd();
+  }
 })();
 </script>
 </body>
