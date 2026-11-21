@@ -398,14 +398,12 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--gold);outline-offse
 @media(prefers-reduced-motion:reduce){.sc-img{transition:none}.sc-img.kb{animation:none}.cap-body{transition:none}}
 
 /* ===== v4.3 motion package ===== */
-.reveal,.reveal-l,.reveal-r{filter:blur(6px)}
-.reveal.in,.reveal-l.in,.reveal-r.in{filter:blur(0)}
-.reveal{transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1),filter .8s ease}
+.reveal{transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1)}
 .kicker{display:inline-flex;align-items:center;gap:12px}
 .kicker::before{content:"";width:0;height:1px;background:var(--gold);transition:width .9s cubic-bezier(.2,.6,.2,1) .15s;flex:none}
 .in .kicker::before,.kicker.in::before{width:42px}
 .sec-head.in h2{animation:h2in .9s cubic-bezier(.2,.65,.2,1) both}
-@keyframes h2in{from{opacity:0;transform:translateY(16px);filter:blur(6px)}to{opacity:1;transform:none;filter:blur(0)}}
+@keyframes h2in{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
 .steps .step:nth-child(2),.beats .beat:nth-child(2){transition-delay:.08s}
 .steps .step:nth-child(3),.beats .beat:nth-child(3){transition-delay:.16s}
 .steps .step:nth-child(4){transition-delay:.24s}
@@ -418,7 +416,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--gold);outline-offse
 .btn:hover::after{left:135%}
 .cap-head{transition:padding .3s ease,background .3s ease}
 .cap-head:hover{background:linear-gradient(90deg,rgba(201,162,39,.08),transparent 65%);padding-left:14px}
-.client{transition:transform .3s ease,border-color .3s ease,opacity .8s cubic-bezier(.2,.6,.2,1),filter .8s ease}
+.client{transition:transform .3s ease,border-color .3s ease,opacity .8s cubic-bezier(.2,.6,.2,1)}
 .client:hover{transform:translateX(6px);border-color:rgba(201,162,39,.45)}
 .client .thumb{transition:transform .45s ease}
 .client:hover .thumb{transform:scale(1.07)}
@@ -819,7 +817,7 @@ addEventListener('scroll', function(){ hdr.classList.toggle('scrolled', scrollY 
 // scroll reveal
 var io = new IntersectionObserver(function(es){
   es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-},{threshold:.12});
+},{threshold:.12,rootMargin:'0px 0px 18% 0px'});
 document.querySelectorAll('.reveal, .reveal-l, .reveal-r').forEach(function(el){ io.observe(el); });
 
 // animated counters
