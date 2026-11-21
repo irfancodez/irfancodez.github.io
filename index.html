@@ -333,6 +333,67 @@ section[id],footer[id]{scroll-margin-top:84px}
   .wrap{padding:0 16px}
   .stat .n{font-size:1.7rem}
 }
+
+/* ===== v4 additions ===== */
+.sc-wrap{display:grid;grid-template-columns:330px 1fr;gap:34px;align-items:start}
+.sc-rail{display:flex;flex-direction:column;gap:8px}
+.sc-item{display:flex;gap:14px;align-items:flex-start;text-align:left;width:100%;background:transparent;border:1px solid transparent;border-left:3px solid var(--line);border-radius:0 12px 12px 0;padding:14px 16px;cursor:pointer;font-family:'Inter',sans-serif;color:var(--muted);transition:all .3s}
+.sc-item:hover{background:var(--card);color:var(--text)}
+.sc-item.on{background:var(--card);border-color:var(--line);border-left-color:var(--gold);color:var(--text)}
+.sc-no{font-family:'Sora';font-weight:800;font-size:.95rem;color:rgba(201,162,39,.45);padding-top:2px}
+.sc-item.on .sc-no{color:var(--gold2)}
+.sc-nm{font-weight:600;font-size:1.02rem;line-height:1.3;display:block}
+.sc-tp{display:block;font-weight:400;font-size:.85rem;color:var(--muted);margin-top:3px}
+.sc-frame{transform:none}
+.sc-stage{position:relative;aspect-ratio:16/10;background:#0d1526;overflow:hidden}
+.sc-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;opacity:0;transform:scale(1.04);transition:opacity .6s ease,transform .6s ease}
+.sc-img.on{opacity:1;transform:scale(1)}
+.sc-img.kb{animation:kb 7s ease forwards}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.07)}}
+.sc-meta{margin-top:22px}
+.sc-mtop{display:flex;justify-content:space-between;align-items:baseline;gap:16px}
+.sc-mtop h3{font-size:1.45rem}
+.sc-count{font-family:'Sora';font-weight:700;color:var(--gold);font-size:.95rem;white-space:nowrap}
+.sc-meta p{color:var(--muted);margin-top:7px;max-width:640px}
+.sc-tags{display:flex;flex-wrap:wrap;gap:8px;margin:15px 0 18px}
+.sc-tags span{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 13px;font-size:.83rem;color:var(--text)}
+.sc-tags span.tech{border-color:rgba(201,162,39,.45);color:var(--gold2)}
+.sc-prog{height:2px;background:var(--line);border-radius:2px;overflow:hidden;margin-bottom:20px}
+.sc-prog span{display:block;height:100%;width:0;background:var(--gold)}
+.caps{border-top:1px solid var(--line)}
+.cap{border-bottom:1px solid var(--line)}
+.cap-head{display:flex;align-items:center;gap:20px;width:100%;background:none;border:none;cursor:pointer;text-align:left;padding:24px 6px;font-family:'Inter',sans-serif;color:var(--text)}
+.cap-no{font-family:'Sora';font-weight:800;font-size:clamp(1.7rem,3vw,2.4rem);color:rgba(201,162,39,.30);min-width:64px;transition:color .3s}
+.cap.open .cap-no,.cap-head:hover .cap-no{color:var(--gold)}
+.cap-head h3{font-size:clamp(1.15rem,2.2vw,1.5rem);flex:1}
+.cap-ic{font-size:1.5rem;color:var(--gold);font-weight:400;transition:transform .35s;line-height:1}
+.cap.open .cap-ic{transform:rotate(45deg)}
+.cap-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s cubic-bezier(.2,.6,.2,1)}
+.cap.open .cap-body{grid-template-rows:1fr}
+.cap-inner{overflow:hidden}
+.cap-inner p{color:var(--muted);max-width:760px;padding:0 6px 6px 84px}
+.cap-inner .sc-tags{padding:8px 6px 24px 84px;margin:0}
+.beats{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin:6px 0 54px}
+.beat{border-top:2px solid rgba(201,162,39,.5);padding-top:16px}
+.beat .bn{font-family:'Sora';font-weight:800;color:var(--gold);font-size:.85rem;letter-spacing:2px;text-transform:uppercase}
+.beat h3{margin:8px 0 6px;font-size:1.12rem}
+.beat p{color:var(--muted);font-size:.95rem}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:24px}
+.step{border-top:1px solid var(--line);padding-top:16px}
+.step .n{font-family:'Sora';font-weight:800;font-size:1.6rem;color:rgba(201,162,39,.4)}
+.step h3{margin:8px 0 6px;font-size:1.05rem}
+.step p{color:var(--muted);font-size:.92rem}
+button:focus-visible,a:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
+@media(max-width:1000px){.steps{grid-template-columns:repeat(2,1fr)}.beats{grid-template-columns:1fr}}
+@media(max-width:900px){
+  .sc-wrap{grid-template-columns:1fr}
+  .sc-rail{flex-direction:row;overflow-x:auto;padding-bottom:8px;gap:8px}
+  .sc-item{border:1px solid var(--line);border-radius:12px;min-width:210px}
+  .sc-item.on{border-color:var(--gold)}
+  .cap-inner p{padding-left:6px}.cap-inner .sc-tags{padding-left:6px}
+}
+@media(max-width:560px){.steps{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.sc-img{transition:none}.sc-img.kb{animation:none}.cap-body{transition:none}}
 </style>
 </head>
 <body>
@@ -412,26 +473,127 @@ section[id],footer[id]{scroll-margin-top:84px}
     </div>
   </div>
 
-  <!-- SERVICES -->
-  <section id="services">
+  <!-- SELECTED WORK SHOWCASE -->
+  <section id="work">
     <div class="wrap">
       <div class="sec-head reveal">
-        <div class="kicker">Services</div>
-        <h2>What I can build for you</h2>
-        <p>Most of my work falls into a few areas, each one delivered end-to-end, with planning, quality checks and direct communication handled by me personally.</p>
+        <div class="kicker">Selected Work</div>
+        <h2>Work that speaks for itself</h2>
+        <p>Five client projects, chosen to show the range: business websites, e-commerce, SEO and long-term care. Select one to see it up close.</p>
       </div>
-      <div class="grid4">
-        <div class="card reveal"><div class="no">/ 01</div><h3>WordPress Websites</h3><p>Business websites in WordPress and Elementor that owners can edit themselves, clean structure, built to last.</p></div>
-        <div class="card reveal d1"><div class="no">/ 02</div><h3>WooCommerce Stores</h3><p>Complete online stores with checkout, payment and shipping set up properly, ready to take orders from day one.</p></div>
-        <div class="card reveal d2"><div class="no">/ 03</div><h3>Shopify Stores</h3><p>Complete Shopify stores, catalog, collections and full setup, like my own watch store, Novixa.</p></div>
-        <div class="card reveal"><div class="no">/ 04</div><h3>SEO · On-Page &amp; Technical</h3><p>On-page and technical SEO built into everything I ship, plus SEO work on existing sites that need to rank and convert.</p></div>
-        <div class="card reveal d1"><div class="no">/ 05</div><h3>GMB &amp; Digital Marketing</h3><p>Google Business Profile creation and optimization, with digital marketing support, so local customers find you first.</p></div>
-        <div class="card reveal d2"><div class="no">/ 06</div><h3>Speed &amp; Security</h3><p>Speed optimization, security hardening, customization, bug fixing and ongoing store management, a developer on call.</p></div>
+      <div class="sc-wrap reveal">
+        <div class="sc-rail" role="tablist" aria-label="Selected projects">
+        <button class="sc-item on" role="tab" id="scTab0" aria-selected="true" aria-controls="scPanel" data-i="0"><span class="sc-no">01</span><span><span class="sc-nm">St Albans Removals</span><span class="sc-tp">Removals Company · United Kingdom</span></span></button>
+        <button class="sc-item" role="tab" id="scTab1" aria-selected="false" aria-controls="scPanel" data-i="1"><span class="sc-no">02</span><span><span class="sc-nm">F&S Travel</span><span class="sc-tp">Travel Agency · United Kingdom</span></span></button>
+        <button class="sc-item" role="tab" id="scTab2" aria-selected="false" aria-controls="scPanel" data-i="2"><span class="sc-no">03</span><span><span class="sc-nm">QATCAN</span><span class="sc-tp">E-Commerce · Canada</span></span></button>
+        <button class="sc-item" role="tab" id="scTab3" aria-selected="false" aria-controls="scPanel" data-i="3"><span class="sc-no">04</span><span><span class="sc-nm">11Eleven Accountancy</span><span class="sc-tp">Accountancy · United Kingdom</span></span></button>
+        <button class="sc-item" role="tab" id="scTab4" aria-selected="false" aria-controls="scPanel" data-i="4"><span class="sc-no">05</span><span><span class="sc-nm">NADRA Service</span><span class="sc-tp">Services · United Kingdom</span></span></button>
+        </div>
+        <div class="sc-main">
+          <div class="frame sc-frame">
+            <div class="bar"><i></i><i></i><i></i><span id="scDom">stalbans-removals.com</span></div>
+            <div class="sc-stage" id="scPanel" role="tabpanel" aria-labelledby="scTab0">
+          <img class="sc-img on kb" src="https://image.thum.io/get/width/1000/https://stalbans-removals.com" data-m="https://s0.wp.com/mshots/v1/https%3A%2F%2Fstalbans-removals.com?w=1000" alt="St Albans Removals website screenshot" loading="eager" onerror="if(!this.dataset.f){this.dataset.f='1';this.src=this.dataset.m}else{this.style.opacity=0}">
+          <img class="sc-img" src="https://image.thum.io/get/width/1000/https://fstravel.co.uk" data-m="https://s0.wp.com/mshots/v1/https%3A%2F%2Ffstravel.co.uk?w=1000" alt="F&S Travel website screenshot" loading="lazy" onerror="if(!this.dataset.f){this.dataset.f='1';this.src=this.dataset.m}else{this.style.opacity=0}">
+          <img class="sc-img" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fqatcan.ca?w=1000" data-m="https://image.thum.io/get/width/1000/https://qatcan.ca" alt="QATCAN website screenshot" loading="lazy" onerror="if(!this.dataset.f){this.dataset.f='1';this.src=this.dataset.m}else{this.style.opacity=0}">
+          <img class="sc-img" src="https://image.thum.io/get/width/1000/https://11elevenaccountancy.co.uk" data-m="https://s0.wp.com/mshots/v1/https%3A%2F%2F11elevenaccountancy.co.uk?w=1000" alt="11Eleven Accountancy website screenshot" loading="lazy" onerror="if(!this.dataset.f){this.dataset.f='1';this.src=this.dataset.m}else{this.style.opacity=0}">
+          <img class="sc-img" src="https://image.thum.io/get/width/1000/https://nadraservice.co.uk" data-m="https://s0.wp.com/mshots/v1/https%3A%2F%2Fnadraservice.co.uk?w=1000" alt="NADRA Service website screenshot" loading="lazy" onerror="if(!this.dataset.f){this.dataset.f='1';this.src=this.dataset.m}else{this.style.opacity=0}">
+            </div>
+          </div>
+          <div class="sc-meta">
+            <div class="sc-mtop"><h3 id="scName">St Albans Removals</h3><span class="sc-count" id="scCount">01 / 05</span></div>
+            <p id="scDet">Removals company website developed with SEO and marketing.</p>
+            <div class="sc-tags" id="scTags"></div>
+            <div class="sc-prog" aria-hidden="true"><span id="scBar"></span></div>
+            <a class="btn primary" id="scGo" href="https://stalbans-removals.com" target="_blank" rel="noopener">Visit Live Site →</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- PACKAGES -->
+<!-- OWN PRODUCTS -->
+  <section id="products" style="padding-top:30px">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="kicker">Own Products</div>
+        <h2>Built by me. Run by me.</h2>
+        <p>Alongside client work, I build and operate products of my own. It is the other half of my experience: not just delivering websites, but living with them.</p>
+      </div>
+      <div class="beats">
+        <div class="beat reveal"><div class="bn">The Idea</div><h3>Spot a real need</h3><p>A gap I can serve myself: a watch store run properly, calculator tools a whole country searches for.</p></div>
+        <div class="beat reveal d1"><div class="bn">The Build</div><h3>Make it myself</h3><p>Design, development, content and structure, all done in-house, to the same standard I deliver for clients.</p></div>
+        <div class="beat reveal d2"><div class="bn">The Operation</div><h3>Live with it daily</h3><p>The part most developers never see: products, customers, updates, problems and improvements, every day.</p></div>
+      </div>
+<div class="split reveal-l">
+        <div class="frame">
+          <div class="bar"><i></i><i></i><i></i><span>tudocalcula.com</span></div>
+          <div class="cover"><div class="tile"><span>=</span><span>✓</span></div><div class="wm">Tudo<span>Calcula</span></div><div class="chips"><span>Salário Líquido</span><span>13º Salário</span><span>Férias</span><span>Rescisão</span><span>FGTS</span></div></div>
+        </div>
+        <div class="split-txt">
+          <div class="flag2">Live Product</div>
+          <h3><a href="https://tudocalcula.com">TudoCalcula</a></h3>
+          <div class="role">Founder &amp; Developer</div>
+          <p>A free Brazilian labour-calculators website: net salary, 13th salary, vacation, severance and more, with calculations verified against the official tables.</p>
+          <ul class="ticks"><li>36 calculator pages, built for search traffic in Brazil</li><li>Static HTML / CSS / JavaScript, fast by design</li><li>Formulas verified against official Brazilian tables</li></ul>
+          <a class="go" href="https://tudocalcula.com">Visit Live Site →</a>
+        </div>
+      </div>
+<div class="split rev reveal-r">
+        <div class="frame">
+          <div class="bar"><i></i><i></i><i></i><span>novixabrand.com</span></div>
+          <img src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fnovixabrand.com?w=1200" alt="Novixa · Shopify watch store" loading="lazy" onerror="this.style.display='none'">
+        </div>
+        <div class="split-txt">
+          <div class="flag2">My Own Store</div>
+          <h3><a href="https://novixabrand.com">Novixa</a></h3>
+          <div class="role">Founder &amp; Developer</div>
+          <p>A complete Shopify watch store, catalog, collections and full store setup for a watches-only brand.</p>
+          <ul class="ticks"><li>Complete Shopify store setup</li><li>Catalog and collections structured to sell</li><li>A watches-only brand, built to launch</li></ul>
+          <a class="go" href="https://novixabrand.com">Visit Live Store →</a>
+        </div>
+      </div>
+      <div class="quote reveal">
+        <div class="big">"I know the store owner's side because I am one."</div>
+        <p>Novixa is my own store. Every checkout, payment and shipping decision I set up for clients is one I live with myself, every day.</p>
+      </div>
+    </div>
+  </section>
+
+<!-- CAPABILITIES -->
+  <section id="services">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="kicker">Capabilities</div>
+        <h2>What I can build for you</h2>
+        <p>Five areas, in the order I do them most. Open one to see exactly what is included.</p>
+      </div>
+      <div class="caps reveal">
+        <div class="cap open">
+          <button class="cap-head" aria-expanded="true"><span class="cap-no">01</span><h3>WordPress Websites</h3><span class="cap-ic">+</span></button>
+          <div class="cap-body"><div class="cap-inner"><p>Business websites designed and built properly: custom layout in WordPress and Elementor, responsive on every screen, structured so the owner can update content without touching code. This is the largest part of my work.</p><div class="sc-tags"><span class="tech">WordPress</span><span class="tech">Elementor Pro</span><span class="tech">Custom Design</span><span class="tech">Responsive</span></div></div></div>
+        </div>
+        <div class="cap">
+          <button class="cap-head" aria-expanded="false"><span class="cap-no">02</span><h3>Online Stores</h3><span class="cap-ic">+</span></button>
+          <div class="cap-body"><div class="cap-inner"><p>Complete stores in WooCommerce and Shopify: catalog, collections, payments, shipping and checkout, configured end-to-end and ready to take orders from day one.</p><div class="sc-tags"><span class="tech">WooCommerce</span><span class="tech">Shopify</span><span class="tech">Payments</span><span class="tech">Checkout</span></div></div></div>
+        </div>
+        <div class="cap">
+          <button class="cap-head" aria-expanded="false"><span class="cap-no">03</span><h3>SEO</h3><span class="cap-ic">+</span></button>
+          <div class="cap-body"><div class="cap-inner"><p>On-page and technical SEO: full audits, site structure, metadata, internal linking and performance fixes, with results visible in reports you can open and check yourself. No ranking guarantees, just verified work.</p><div class="sc-tags"><span class="tech">On-Page SEO</span><span class="tech">Technical SEO</span><span class="tech">Audits</span><span class="tech">Moz Pro</span></div></div></div>
+        </div>
+        <div class="cap">
+          <button class="cap-head" aria-expanded="false"><span class="cap-no">04</span><h3>GMB & Digital Marketing</h3><span class="cap-ic">+</span></button>
+          <div class="cap-body"><div class="cap-inner"><p>Google Business Profile creation and optimization: complete profiles, posts, photos and review replies, plus digital marketing support, so local customers find you first.</p><div class="sc-tags"><span class="tech">Google Business Profile</span><span class="tech">Local SEO</span><span class="tech">Reviews</span><span class="tech">Posts</span></div></div></div>
+        </div>
+        <div class="cap">
+          <button class="cap-head" aria-expanded="false"><span class="cap-no">05</span><h3>Speed, Security & Care</h3><span class="cap-ic">+</span></button>
+          <div class="cap-body"><div class="cap-inner"><p>Speed optimization, security hardening, updates, bug fixing and full website management. Your site stays fast, secure and current while you run your business.</p><div class="sc-tags"><span class="tech">Speed Optimization</span><span class="tech">Security</span><span class="tech">Maintenance</span><span class="tech">Support</span></div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- PACKAGES -->
   <section id="packages" style="padding-top:30px">
     <div class="wrap">
       <div class="sec-head reveal">
@@ -509,44 +671,29 @@ section[id],footer[id]{scroll-margin-top:84px}
     </div>
   </section>
 
-  <!-- WORK -->
-  <section id="work" style="padding-top:30px">
+  <!-- HOW I WORK -->
+  <section id="process" style="padding-top:30px">
     <div class="wrap">
       <div class="sec-head reveal">
-        <div class="kicker">Featured Work</div>
-        <h2>Products of my own, work for clients</h2>
-        <p>Novixa is my own store, designed, built and run by me. The client work was delivered with Daain Communication (Pakistan) and Brand Brilliance (US).</p>
+        <div class="kicker">How I Work</div>
+        <h2>A clear process, from first call to launch</h2>
+        <p>Every project, a client website or one of my own products, runs through the same five steps.</p>
       </div>
-      <div class="split reveal-l">
-        <div class="frame">
-          <div class="bar"><i></i><i></i><i></i><span>tudocalcula.com</span></div>
-          <div class="cover"><div class="tile"><span>=</span><span>✓</span></div><div class="wm">Tudo<span>Calcula</span></div><div class="chips"><span>Salário Líquido</span><span>13º Salário</span><span>Férias</span><span>Rescisão</span><span>FGTS</span></div></div>
-        </div>
-        <div class="split-txt">
-          <div class="flag2">Live Product</div>
-          <h3><a href="https://tudocalcula.com">TudoCalcula</a></h3>
-          <div class="role">Founder &amp; Developer</div>
-          <p>A free Brazilian labour-calculators website: net salary, 13th salary, vacation, severance and more, with calculations verified against the official tables.</p>
-          <ul class="ticks"><li>36 calculator pages, built for search traffic in Brazil</li><li>Static HTML / CSS / JavaScript, fast by design</li><li>Formulas verified against official Brazilian tables</li></ul>
-          <a class="go" href="https://tudocalcula.com">Visit Live Site →</a>
-        </div>
+      <div class="steps">
+        <div class="step reveal"><div class="n">01</div><h3>Discover</h3><p>Requirements, business goals, audience and scope, agreed before anything is built.</p></div>
+        <div class="step reveal d1"><div class="n">02</div><h3>Plan</h3><p>Structure, content, functionality and technical decisions mapped out up front.</p></div>
+        <div class="step reveal"><div class="n">03</div><h3>Design & Build</h3><p>Layout and development, with progress you can see as it happens.</p></div>
+        <div class="step reveal d1"><div class="n">04</div><h3>Test & Launch</h3><p>Responsive, functionality and performance checks, then deployment and handover.</p></div>
+        <div class="step reveal"><div class="n">05</div><h3>Support</h3><p>Maintenance, improvements and ongoing care where agreed.</p></div>
       </div>
-      <div class="split rev reveal-r">
-        <div class="frame">
-          <div class="bar"><i></i><i></i><i></i><span>novixabrand.com</span></div>
-          <img src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fnovixabrand.com?w=1200" alt="Novixa · Shopify watch store" loading="lazy" onerror="this.style.display='none'">
-        </div>
-        <div class="split-txt">
-          <div class="flag2">My Own Store</div>
-          <h3><a href="https://novixabrand.com">Novixa</a></h3>
-          <div class="role">Founder &amp; Developer</div>
-          <p>A complete Shopify watch store, catalog, collections and full store setup for a watches-only brand.</p>
-          <ul class="ticks"><li>Complete Shopify store setup</li><li>Catalog and collections structured to sell</li><li>A watches-only brand, built to launch</li></ul>
-          <a class="go" href="https://novixabrand.com">Visit Live Store →</a>
-        </div>
-      </div>
+      <div class="pkg-note reveal" style="margin-top:34px"><strong>No report, no payment.</strong> Milestone work is paid on reports you can verify yourself, in Moz Pro, Ahrefs, Search Console or your own dashboard.</div>
+    </div>
+  </section>
 
-      <h3 class="reveal" style="font-size:1.25rem;margin:52px 0 4px">Selected Client Work</h3>
+<!-- SELECTED CLIENT WORK -->
+  <section id="clients" style="padding-top:30px">
+    <div class="wrap">
+<h3 class="reveal" style="font-size:1.25rem;margin:52px 0 4px">Selected Client Work</h3>
       <p class="reveal" style="color:var(--muted);margin-bottom:8px">A sample of the 145+ websites, business sites, e-commerce, SEO and long-term maintenance.</p>
       <div class="client-grid">
         <a class="client reveal" href="https://sandsdocument.com"><img class="thumb" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fsandsdocument.com?w=400" alt="" loading="lazy" onerror="this.remove()"><span class="grow"><span class="t">Sands Document</span><br><span class="s">Document services · Brand Brilliance</span></span><span class="arr">→</span></a>
@@ -567,17 +714,7 @@ section[id],footer[id]{scroll-margin-top:84px}
     </div>
   </section>
 
-  <!-- QUOTE -->
-  <section style="padding-top:20px">
-    <div class="wrap">
-      <div class="quote reveal">
-        <div class="big">"I know the store owner's side,<br><span>because I am one.</span>"</div>
-        <p>Novixa is my own store. Every checkout, payment and shipping decision I set up for clients is one I live with myself, every day.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT + EXPERIENCE -->
+<!-- ABOUT + EXPERIENCE -->
   <section id="about" style="padding-top:30px">
     <div class="wrap">
       <div class="sec-head reveal">
@@ -744,6 +881,65 @@ if (tEl) {
     })();
   }
 }
+</script>
+
+<script>
+// v4: Selected Work showcase + Capabilities accordion
+(function(){
+  var P = [{"name": "St Albans Removals", "dom": "stalbans-removals.com", "det": "Removals company website developed with SEO and marketing.", "tags": ["Development", "SEO", "Marketing"], "tech": ["WordPress"], "co": "Brand Brilliance", "url": "https://stalbans-removals.com"}, {"name": "F&S Travel", "dom": "fstravel.co.uk", "det": "Travel website developed with SEO and marketing for a UK travel agency.", "tags": ["Development", "SEO", "Marketing"], "tech": ["WordPress"], "co": "Daain Communication", "url": "https://fstravel.co.uk"}, {"name": "QATCAN", "dom": "qatcan.ca", "det": "E-commerce website developed for a Canadian business.", "tags": ["Development"], "tech": ["WordPress", "WooCommerce"], "co": "Daain Communication", "url": "https://qatcan.ca"}, {"name": "11Eleven Accountancy", "dom": "11elevenaccountancy.co.uk", "det": "Complete SEO programme with ongoing maintenance and regular blog content for a UK accountancy firm.", "tags": ["SEO", "Maintenance"], "tech": ["WordPress"], "co": "Brand Brilliance", "url": "https://11elevenaccountancy.co.uk"}, {"name": "NADRA Service", "dom": "nadraservice.co.uk", "det": "Service website developed with SEO for a UK-based NADRA services provider.", "tags": ["Development", "SEO"], "tech": ["WordPress"], "co": "Brand Brilliance", "url": "https://nadraservice.co.uk"}];
+  var items = Array.prototype.slice.call(document.querySelectorAll('.sc-item'));
+  var imgs = Array.prototype.slice.call(document.querySelectorAll('.sc-img'));
+  var dom = document.getElementById('scDom'), nm = document.getElementById('scName'),
+      det = document.getElementById('scDet'), tags = document.getElementById('scTags'),
+      cnt = document.getElementById('scCount'), go = document.getElementById('scGo'),
+      bar = document.getElementById('scBar'), panel = document.getElementById('scPanel'),
+      wrap = document.querySelector('.sc-wrap');
+  if (!items.length) return;
+  var cur = 0, timer = null, DUR = 6500;
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function chips(p){
+    var h = '';
+    p.tags.forEach(function(t){ h += '<span>' + t + '</span>'; });
+    p.tech.forEach(function(t){ h += '<span class="tech">' + t + '</span>'; });
+    h += '<span class="tech">' + p.co + '</span>';
+    return h;
+  }
+  function show(i, user){
+    cur = i;
+    items.forEach(function(b, j){ b.classList.toggle('on', j === i); b.setAttribute('aria-selected', j === i ? 'true' : 'false'); });
+    imgs.forEach(function(im, j){ im.classList.toggle('on', j === i); im.classList.toggle('kb', j === i && !reduce); });
+    var p = P[i];
+    dom.textContent = p.dom; nm.textContent = p.name; det.textContent = p.det;
+    tags.innerHTML = chips(p); go.href = p.url;
+    cnt.textContent = '0' + (i + 1) + ' / 05';
+    panel.setAttribute('aria-labelledby', 'scTab' + i);
+    restart(user);
+  }
+  function restart(user){
+    if (timer) { clearTimeout(timer); timer = null; }
+    bar.style.transition = 'none'; bar.style.width = '0';
+    if (user || reduce) return;
+    void bar.offsetWidth;
+    bar.style.transition = 'width ' + DUR + 'ms linear'; bar.style.width = '100%';
+    timer = setTimeout(function(){ show((cur + 1) % P.length, false); }, DUR);
+  }
+  items.forEach(function(b){ b.addEventListener('click', function(){ show(+b.dataset.i, true); }); });
+  if (wrap) {
+    wrap.addEventListener('pointerenter', function(){ if (timer) { clearTimeout(timer); timer = null; } bar.style.transition = 'none'; });
+    wrap.addEventListener('pointerleave', function(){ restart(false); });
+  }
+  tags.innerHTML = chips(P[0]);
+  restart(false);
+  // capabilities accordion
+  var heads = document.querySelectorAll('.cap-head');
+  heads.forEach(function(h){
+    h.addEventListener('click', function(){
+      var cap = h.parentElement, was = cap.classList.contains('open');
+      document.querySelectorAll('.cap.open').forEach(function(c){ c.classList.remove('open'); c.querySelector('.cap-head').setAttribute('aria-expanded', 'false'); });
+      if (!was) { cap.classList.add('open'); h.setAttribute('aria-expanded', 'true'); }
+    });
+  });
+})();
 </script>
 </body>
 </html>
