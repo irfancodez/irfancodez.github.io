@@ -270,7 +270,9 @@ footer .big span{color:var(--gold)}
 .mq-type{display:flex;justify-content:center;align-items:baseline;font-family:'Sora';font-weight:700;font-size:1.18rem;color:var(--gold2);min-height:1.6em;letter-spacing:.4px}
 .typer{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;font-family:'Sora';font-size:clamp(1.15rem,2.4vw,1.5rem);font-weight:600;margin:6px 0 18px;min-height:1.55em}
 .typer-label{color:var(--muted)}
-.typed{color:var(--gold2)}
+.typed{color:var(--gold2);display:inline-block;transition:opacity .34s ease,transform .34s ease}
+.typed.out{opacity:0;transform:translateY(-45%)}
+.typed.prep{opacity:0;transform:translateY(45%);transition:none}
 .cursor{display:inline-block;width:3px;height:1.02em;background:var(--gold);vertical-align:-.14em;animation:blink 1s steps(1) infinite;box-shadow:0 0 8px rgba(201,162,39,.8)}
 @keyframes blink{50%{opacity:0}}
 .cursor.big{width:4px;height:.8em;vertical-align:-.04em;margin-left:5px}
@@ -864,21 +866,24 @@ if (burger && mnav) {
   document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeMenu(); });
 }
 
-// live typewriter: rotating word inside the headline
+// headline word swap: whole words only, so every visible frame is a complete, grammatical sentence
 var tEl = document.getElementById('typed');
 if (tEl) {
   var words = ['websites','online stores','Shopify stores','business sites'];
   if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
     tEl.textContent = words[0];
   } else {
-    var wi = 0, ci = 0, del = false;
-    (function tick(){
-      var w = words[wi], wait;
-      if (!del) { ci++; if (ci >= w.length) { ci = w.length; del = true; wait = 1500; } else wait = 55; }
-      else { ci--; if (ci <= 0) { ci = 0; del = false; wi = (wi + 1) % words.length; wait = 320; } else wait = 26; }
-      tEl.textContent = w.slice(0, ci);
-      setTimeout(tick, wait);
-    })();
+    var wi = 0;
+    setInterval(function(){
+      tEl.classList.add('out');
+      setTimeout(function(){
+        wi = (wi + 1) % words.length;
+        tEl.textContent = words[wi];
+        tEl.classList.add('prep');
+        void tEl.offsetWidth;
+        tEl.classList.remove('prep', 'out');
+      }, 340);
+    }, 2800);
   }
 }
 </script>
